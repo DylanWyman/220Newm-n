@@ -1,35 +1,25 @@
-new p5();
+//grab element
+var theDiv = document.getElementById("nonButton");
 
+//assign color to background
+theDiv.style.backgroundColor = "#34888a";
 
-//randomly color the background
-var randomizeBackground = random(150);
+//assign dimsension
+theDiv.style.width = "100px";
+theDiv.style.height = "100px";
 
-//set an x position
-var x=20;
-
-
-//rules of the canvas
-function setup() {
-    createCanvas(1000, 1000)
-
-
-
-    frameRate(1);
+//create function to detect when mouse is above
+function above() {
+    //assign color
+    theDiv.style.backgroundColor = "#0b1212";
 }
 
-//start drawing
-function draw() {
-
-
-
-
-//color the background
-    background(155, randomizeBackground, randomizeBackground);
-
-
-
-
-    
+//create function to detect when mouse is not above
+function gone() {
+    //assign color
+    theDiv.style.backgroundColor = "#34888a";
 }
+
+
 
 //over and out

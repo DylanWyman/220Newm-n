@@ -1,36 +1,27 @@
-new p5();
+//grab element
+var findDiv = document.getElementById("100");
 
+//make loop that creates more divs
+for (var i = 0; i < 517; i++) {
+    //create new div
+    var newDiv = document.createElement("div");
 
-//randomly color the background
-var randomizeBackground = random(150);
+    //assign div style
+    newDiv.style.height = "20px";
+    newDiv.style.width = "20px";
+    newDiv.style.float = "left";
 
-//set an x position
-var x=20;
+    //color variance
+    var colors = 7.7 * i;
 
+    //create colors
+    var color = 'hsl(' + String(colors) + ', 100%, 50%)'
 
-//rules of the canvas
-function setup() {
-    createCanvas(1000, 1000)
+    //send background color
+    newDiv.style.backgroundColor = color;
 
-
-
-    frameRate(1);
-}
-
-//start drawing
-function draw() {
-
-
-
-
-//color the background
-    background(155, randomizeBackground, randomizeBackground);
-
-
-
-
-
-    
+    //locate position
+    document.body.insertBefore(newDiv,findDiv);
 }
 
 //that's a lot of div

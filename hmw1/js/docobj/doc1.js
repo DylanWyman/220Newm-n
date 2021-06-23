@@ -1,36 +1,17 @@
-new p5();
+//grab element
+var growDiv = document.getElementById("growing");
+//assign dimensions
+var width = 100;
+var height = 100;
 
+//create function to make object large
+function sizeUp() {
+    //scale up dimensions
+    width = width * 1.1;
+    height = height * 1.1;
 
-//randomly color the background
-var randomizeBackground = random(150);
+    //assign dimesions to div
+    growDiv.style.width = width + "px";
+    growDiv.style.height = height + "px";
 
-//set an x position
-var x=20;
-
-
-//rules of the canvas
-function setup() {
-    createCanvas(1000, 1000)
-
-
-
-    frameRate(1);
 }
-
-//start drawing
-function draw() {
-
-
-
-
-//color the background
-    background(155, randomizeBackground, randomizeBackground);
-
-
-
-
-
-    
-}
-
-//peak pixel
