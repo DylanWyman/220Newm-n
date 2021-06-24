@@ -533,21 +533,7 @@ let co8 = "#4fd6c9";
 
 */
 
-//variabels for revealed card comparison
-let temp = 0;
-let colorMatch = "blank";
 
-
-
-//wait 3 seconds before comparison
-function revealBase(){
-
-    setTimeout(revealing, 3000)
-
-
-    
-
-}
 
 
 
@@ -591,7 +577,21 @@ function revealing(){
 
 
 
+//variabels for revealed card comparison
+let temp = 0;
+let colorMatch = "blank";
 
+
+
+//wait 3 seconds before comparison
+function revealBase(){
+
+    setTimeout(revealing, 3000)
+
+
+    
+
+}
 
 
 
@@ -602,69 +602,96 @@ function revealing(){
 //compare the two cards function
 function revealing(){
 
+//https://www.w3docs.com/snippets/javascript/how-to-remove-an-element-from-an-array-in-javascript.html
+    //change variables stuff idk
+    let card1 = c1color.shift()
+    let card2 = c2color.shift()
 
 
-    console.log( c1color, c2color, [co1]);
+    //console log to compare colors
+    console.log( card1, card2, co1);
 
+    //if user clicks 
     if(click == 2){
 
-        
-        if(c1color == [co1] && c2color == [co1]){
+        // testing to see if results match
+        if(card1 == co1 && card2 == co1 || card1 == card2){
+            colorMatch = "true"
+            console.log(1)
+        }
+        console.log(4)
+        if(card1 == co1 && card2 == co1){
+            colorMatch = "true"
+            console.log(2)
+        }
+        console.log(5)
+        if(card1 == card2){
+            colorMatch = "true"
+            console.log(3)
+        }
+        console.log(6)
+
+        //see if color1 matches color2 through the base color as a medium
+        if(card1 == co2 && card2 == co2 ){
             colorMatch = "true"
         }
-        if(c1color == [co2] && c2color == [co2]){
+        if(card1 == co3 && card2 == co3 ){
             colorMatch = "true"
         }
-        if(c1color == [co3] && c2color == [co3]){
+        if(card1 == co4 && card2 == co4 ){
             colorMatch = "true"
         }
-        if(c1color == [co4] && c2color == [co4]){
+        if(card1 == co5 && card2 == co5 ){
             colorMatch = "true"
         }
-        if(c1color === [co5] && c2color === [co5]){
+        if(card1 == co6 && card2 == co6 ){
             colorMatch = "true"
         }
-        if(c1color === [co6] && c2color === [co6]){
+        if(card1 == co7 && card2 == co7 ){
             colorMatch = "true"
         }
-        if(c1color === [co7] && c2color === [co7]){
+        if(card1 == co8 && card2 == co8 ){
             colorMatch = "true"
         }
-        if(c1color === [co8] && c2color === [co8]){
-            colorMatch = "true"
-        }
-        else {
+
+        //if the if statements can't find a match set it to false
+      /*  else {
             colorMatch = "false"
         }
         console.log(colorMatch)
+*/
 
 
 
-
-
+    //change variables stuff idk
+    card1 = c1color.unshift()
+    card2 = c2color.unshift()
     
+        console.log(c1color,c2color)
 
+        //if colors don't match send false
+        if(colorMatch == "blank"){
+            temp = temp-1000
+            console.log(temp)
+            noMatch();
+        }
 
+        //if colors match send true
         if(colorMatch == "true"){
             temp += 100
             console.log(temp)
             match();
 
         }
-        if(colorMatch == "false"){
-            temp = temp-1000
-            console.log(temp)
-            noMatch();
-        }
+
+
     }
 }
 
 
 
 function match(){
-
-    b1.doc.style.backgroundColor = "black";
-    b2.doc.style.backgroundColor = "black";
+    colorMatch = "blank";
 
     console.log(c1==c2)
 
